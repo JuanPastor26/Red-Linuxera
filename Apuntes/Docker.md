@@ -1,0 +1,22 @@
+# Docker
+- `docker build -t my_first_image . ->` Crea un contenedor utilizando el sistema operativo descrito en el archivo dockerfile en el directorio actual de trabajo.
+- `docker pull debian:latest` -> Descarga la imagen de la última versión de debian desde los registros de docker.
+- `docker run -dit --name myContainer my_first_image` -> Corre el contenedor myContainer con la imagen my_first_image con los parametros -dit (d para dejar en segundo plano el contenedor, i para que sea interactivo, y t para que tenga una terminal virtual).
+- `docker exec -it myContainer bash` -> Conectarse al contenedor mediante una consola interactiva y ejecutar la shell de bash.
+- `apt-install net-tools` -> Instalar ifconfig en el contenedor.
+- `apt-install iputils-ping` -> Instalar la herramienta para poder hacer ping desde el contenedor.
+- `docker ps ->` Mostrar que contenedores se estan ejecutando en segundo plano.
+- `docker stop ID` -> Finalizar un contenedor de docker.
+- `docker ps -a ->` Mostrar contenedores que se están ejecutando en segundo plano y tambien muestra contenedores que ya finalizaron.
+- `docker ps -q` -> Mostrar el ID de los contenedores en ejecución.
+- `docker rm ID` -> Borrar contenedor una vez ya finalizado.
+- `docker rm ID --force` -> Borrar contenedor de manera forzada.
+- `docker rmi ID` -> Eliminar imagen de contenedor.
+- `docker run -dit 80:80 --name myWebServer webserver` ->  Correr contenedor en el cuál el puerto 80 de mi máquina será el puerto 80 del contenedor.
+- `docker port myWebServer` -> Verificar port forwarding del contenedor.
+- `docker run -dit -p 80:80 -v /home/pastor/docker/:/var/www/html/ --name myWebServer webserver` -> Crear montura para montar contenido de mi maquina (../docker/) en la ruta (../html/) del contenedor.
+- `docker logs ID -f` -> Revisar registros de eventos que sucedan en tiempo real en el contenedor.
+- `docker-compose up -d` -> Desplegar máquinas vulnerables ubicadas en el directorio actual.
+- `docker-compose logs` -> Ver logs de la máquina que está usando docker-compose.
+- `docker rm $(docker ps -a -q) --force` -> Borrar todos los contenedores en ejecución de manera forzada.
+- `docker rmi $(docker images -q)` -> Borrar todas las imagenes en el directorio actual.
