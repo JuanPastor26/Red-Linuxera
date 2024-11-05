@@ -12,3 +12,5 @@
 ### Opciones adicionales para wfuzz
 - `--hc=404` -> Ocultar código de estado
 - `--sc=200` -> Mostrar código de estado
+## Diccionarios
+https://github.com/danielmiessler/SecLists.git
