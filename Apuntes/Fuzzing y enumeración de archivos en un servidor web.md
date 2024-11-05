@@ -17,5 +17,5 @@
   - `--sh=85` -> Mostrar resultados con 85 caracteres.
   - `-z list,html-txt-php`  -> Listar resultados por extensiones (www.facebook.com/FUZZ.FUZ2Z).
   - `-z range,1-2000 'www.facebook.com/product_id=FUZZ'` -> Aplicar un rango a un valor específico.
-## Diccionarios usados
+## Diccionarios
 https://github.com/danielmiessler/SecLists.git
